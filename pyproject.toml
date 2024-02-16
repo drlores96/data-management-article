@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data_manager"
+dynamic = ["version"]
+dependencies = [
+  "pandas",
+  "fsspec",
+  "mlflow",
+  "sqlalchemy",
+  "pydantic",
+  "matplotlib",
+  "s3fs"
+]
+requires-python = ">= 3.8"
+authors = [
+  {name = "David R. Lores", email = "d.r.lores.sci@gmail.com"},
+]
+maintainers = [
+  {name = "David R. Lores", email = "d.r.lores.sci@gmail.com"}
+]
+description = "Lovely Spam! Wonderful Spam!"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["data", "management", "python", "sql", "mlflow", "aws"]
+classifiers = [
+  "Programming Language :: Python"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "data_manager.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["data_manager*"]
+namespaces = false
